@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حذف الحساب — انيموني فلور</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --lav-bg:#e9e1f0;--lav-line:#c6b2d6;--purple:#2f1b4b;
+    --purple-soft:#58407a;--ink:#3a2e4a;--card:#fbf8fd;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:'Tajawal',sans-serif;
+    background:
+      radial-gradient(1200px 600px at 80% -10%, #f3ecf8 0%, transparent 60%),
+      radial-gradient(900px 500px at 0% 110%, #ddd0e8 0%, transparent 55%),
+      var(--lav-bg);
+    color:var(--ink);line-height:1.9;min-height:100vh;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:48px 24px 80px}
+  header.hero{text-align:center;padding:56px 24px 40px}
+  .mark{
+    width:88px;height:88px;border-radius:24px;margin:0 auto 22px;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(140deg,#e4d4e9,#b59fc8);
+    box-shadow:0 16px 40px -12px rgba(47,27,75,.45);
+  }
+  .mark svg{width:46px;height:46px}
+  h1{font-weight:800;font-size:clamp(28px,5vw,40px);color:var(--purple);letter-spacing:-.5px}
+  .latin{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--purple-soft);font-size:20px;letter-spacing:1px;margin-top:6px}
+  .card{
+    background:var(--card);border:1px solid var(--lav-line);border-radius:22px;
+    padding:38px clamp(22px,5vw,46px);box-shadow:0 30px 60px -30px rgba(47,27,75,.28);
+  }
+  .intro{font-size:17px;margin-bottom:28px}
+  h2{font-weight:700;color:var(--purple);font-size:21px;margin:30px 0 12px;padding-right:16px;position:relative}
+  h2::before{content:"";position:absolute;right:0;top:8px;bottom:8px;width:5px;border-radius:4px;background:linear-gradient(var(--purple),var(--purple-soft))}
+  p{margin-bottom:12px;font-size:16px}
+  ol,ul{margin:8px 24px 16px}
+  li{margin-bottom:10px;font-size:16px}
+  a{color:var(--purple-soft);font-weight:600}
+  .steps{counter-reset:s;list-style:none;margin:14px 0}
+  .steps li{
+    position:relative;padding:14px 60px 14px 18px;margin-bottom:12px;
+    background:#fff;border:1px solid var(--lav-line);border-radius:14px;
+  }
+  .steps li::before{
+    counter-increment:s;content:counter(s);
+    position:absolute;right:14px;top:50%;transform:translateY(-50%);
+    width:34px;height:34px;border-radius:50%;
+    background:linear-gradient(135deg,var(--purple),var(--purple-soft));
+    color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;
+  }
+  .box{
+    border-radius:16px;padding:22px 24px;margin-top:18px;border:1px solid var(--lav-line);
+  }
+  .box.del{background:linear-gradient(135deg,#f6ecef,#efdde6)}
+  .box.keep{background:linear-gradient(135deg,#eef0f6,#e2e6f1)}
+  .box h3{color:var(--purple);font-size:17px;margin-bottom:8px}
+  .contact{margin-top:30px;background:linear-gradient(135deg,#efe6f5,#e0d2ec);border-radius:18px;padding:24px 26px;border:1px solid var(--lav-line)}
+  footer{text-align:center;margin-top:40px;color:var(--purple-soft);font-size:13px}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="mark">
+    <svg viewBox="0 0 100 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 12 C30 35 26 70 50 100 C74 70 70 35 50 12 Z" fill="#2f1b4b"/>
+      <path d="M50 28 C40 48 40 78 50 98" stroke="#e4d4e9" stroke-width="2.5" fill="none"/>
+      <path d="M50 30 C58 50 56 78 50 96" stroke="#e4d4e9" stroke-width="2" fill="none"/>
+    </svg>
+  </div>
+  <h1>حذف الحساب</h1>
+  <div class="latin">Anemone Flower — Delete Account</div>
+</header>
+
+<div class="wrap">
+  <div class="card">
+    <p class="intro">
+      يمكنك حذف حسابك في تطبيق <b>انيموني فلور</b> وكل البيانات المرتبطة به في أي وقت.
+      يوضّح لك ما يلي خطوات الحذف من داخل التطبيق، وكذلك ما الذي يتم حذفه.
+    </p>
+
+    <h2>طريقة الحذف من داخل التطبيق</h2>
+    <ol class="steps">
+      <li>افتح تطبيق انيموني فلور وسجّل الدخول برقم هاتفك.</li>
+      <li>افتح القائمة الجانبية (Drawer) من أعلى الشاشة.</li>
+      <li>اضغط على <b>الإعدادات</b> ثم <b>حذف الحساب</b>.</li>
+      <li>أكّد رغبتك في الحذف. سيتم حذف حسابك وبياناتك نهائيًا.</li>
+    </ol>
+
+    <h2>الحذف عبر الطلب المباشر</h2>
+    <p>
+      إذا لم تتمكن من الوصول إلى التطبيق، يمكنك إرسال طلب حذف الحساب عبر البريد الإلكتروني
+      من نفس رقم الهاتف المسجّل، وسنقوم بتنفيذ الطلب خلال مدة أقصاها <b>30 يومًا</b>.
+    </p>
+
+    <h2>ما الذي يتم حذفه؟</h2>
+    <div class="box del">
+      <h3>بيانات تُحذف نهائيًا</h3>
+      <ul>
+        <li>رقم الهاتف وبيانات الحساب.</li>
+        <li>سجلّ الطلبات والعناوين المحفوظة.</li>
+        <li>تفضيلاتك وإعدادات الإشعارات.</li>
+      </ul>
+    </div>
+    <div class="box keep">
+      <h3>بيانات قد يتم الاحتفاظ بها</h3>
+      <ul>
+        <li>سجلّات المعاملات المالية/الفواتير التي تتطلب الأنظمة الاحتفاظ بها لفترة محدّدة، ويتم حذفها بعد انتهاء المدة القانونية.</li>
+      </ul>
+    </div>
+
+    <div class="contact">
+      <h2 style="margin-top:0">لطلب الحذف أو الاستفسار</h2>
+      <p><b>البريد الإلكتروني:</b> <a href="mailto:support@anemone-flower.com">support@anemone-flower.com</a></p>
+      <p style="font-size:14px;color:var(--purple-soft)">* استبدل البريد أعلاه ببريدك الرسمي قبل النشر.</p>
+    </div>
+  </div>
+
+  <footer>© 2026 انيموني فلور — Anemone Flower. جميع الحقوق محفوظة.</footer>
+</div>
+</body>
+</html>
