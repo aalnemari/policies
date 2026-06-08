@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حذف الحساب · Delete Account — Minute Cup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1B2946; --navy-2:#26385c; --navy-deep:#121d33;
+    --cream:#F7F5EF; --sand:#D6A86E; --sand-deep:#c3924f;
+    --ink:#2a3144; --muted:#5c6678; --line:#e7e2d6; --card:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:
+      radial-gradient(900px 500px at 80% -10%, rgba(214,168,110,.10), transparent 60%),
+      linear-gradient(180deg,#f3f1e9 0%, #ece8dc 100%);
+    color:var(--ink); font-family:"Plus Jakarta Sans","Cairo",sans-serif; line-height:1.85; min-height:100vh;
+  }
+  html[lang="ar"] body{font-family:"Cairo",sans-serif}
+  html[lang="en"]{direction:ltr}
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px 80px}
+  header{background:radial-gradient(700px 360px at 18% 0%, var(--navy-2), transparent 60%),
+      linear-gradient(160deg,var(--navy) 0%, var(--navy-deep) 100%);color:var(--cream);position:relative;overflow:hidden}
+  header::after{content:"";position:absolute;inset:0;
+    background:radial-gradient(2px 2px at 20% 40%,rgba(255,255,255,.06),transparent),
+              radial-gradient(2px 2px at 70% 70%,rgba(255,255,255,.05),transparent),
+              radial-gradient(3px 2px at 85% 25%,rgba(255,255,255,.05),transparent)}
+  .head-inner{max-width:880px;margin:0 auto;padding:46px 20px 54px;position:relative;z-index:1}
+  .brand{display:flex;align-items:center;gap:16px}
+  .brand svg{width:54px;height:auto;flex:0 0 auto;filter:drop-shadow(0 6px 14px rgba(0,0,0,.25))}
+  .brand .name{font-family:"Fredoka",sans-serif;font-weight:700;font-size:30px}
+  .brand .name .cup{color:var(--sand)}
+  h1{margin-top:26px;font-size:clamp(28px,5vw,40px);font-weight:800}
+  .sub{margin-top:10px;color:#c3cbdd;font-size:16px}
+  .updated{margin-top:18px;display:inline-block;font-size:13px;background:rgba(247,245,239,.12);
+    border:1px solid rgba(247,245,239,.18);padding:6px 14px;border-radius:999px}
+  .lang{position:absolute;top:22px;inset-inline-end:20px;z-index:3;display:flex;gap:6px;
+    background:rgba(18,29,51,.5);border:1px solid rgba(247,245,239,.2);border-radius:999px;padding:4px}
+  .lang button{font:inherit;font-size:13px;font-weight:700;border:0;cursor:pointer;color:#c3cbdd;background:transparent;
+    padding:6px 14px;border-radius:999px;font-family:"Plus Jakarta Sans","Cairo",sans-serif}
+  .lang button.active{background:var(--sand);color:var(--navy-deep)}
+  .card{background:var(--card);margin-top:-28px;border-radius:22px;padding:34px clamp(20px,4vw,46px);
+    box-shadow:0 24px 60px -28px rgba(27,41,70,.4);border:1px solid var(--line)}
+  h2{font-size:21px;font-weight:800;color:var(--navy);margin:34px 0 12px;display:flex;align-items:center;gap:12px}
+  h2:first-of-type{margin-top:4px}
+  p{margin:8px 0}
+  strong{color:var(--navy)}
+  a{color:var(--sand-deep);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(195,146,79,.4)}
+  /* steps */
+  .steps{counter-reset:s;list-style:none;margin:14px 0;padding:0}
+  .steps li{position:relative;padding:14px 18px;padding-inline-start:60px;margin:10px 0;background:#faf8f1;
+    border:1px solid #ece5d3;border-radius:14px}
+  .steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:14px;top:50%;
+    transform:translateY(-50%);width:32px;height:32px;border-radius:10px;background:linear-gradient(160deg,var(--sand),var(--sand-deep));
+    color:#fff;display:grid;place-items:center;font-weight:700;font-family:"Fredoka",sans-serif}
+  .pill{display:inline-block;background:#eef0f6;border:1px solid #dde1ec;border-radius:8px;padding:1px 9px;
+    font-weight:700;color:var(--navy);font-size:.92em}
+  ul.plain{margin:10px 0;padding-inline-start:22px}
+  ul.plain li{margin:7px 0}
+  .danger{background:#fff4f1;border:1px solid #f6d9cf;border-inline-start:4px solid #e07a52;border-radius:12px;padding:14px 18px;margin:14px 0}
+  .keep{background:#fbf7ee;border:1px solid #efe6d1;border-inline-start:4px solid var(--sand);border-radius:12px;padding:14px 18px;margin:14px 0}
+  .contact{margin-top:24px;background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:var(--cream);border-radius:16px;padding:24px 26px}
+  .contact h3{font-size:18px;margin-bottom:12px;font-family:"Fredoka","Cairo",sans-serif}
+  .contact a{color:var(--sand);border:0}
+  .contact .row{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0;color:#d9dfec}
+  footer{text-align:center;color:var(--muted);font-size:13px;margin-top:30px}
+  .lang-en{display:none}
+  html[lang="en"] .lang-ar{display:none}
+  html[lang="en"] .lang-en{display:block}
+</style>
+</head>
+<body>
+<header>
+  <div class="lang">
+    <button id="btn-ar" class="active" onclick="setLang('ar')">عربي</button>
+    <button id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+  <div class="head-inner">
+    <div class="brand">
+      <svg viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg" aria-label="Minute Cup">
+        <g fill="none" stroke="#F7F5EF" stroke-width="15" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="72" y="44" width="256" height="34" rx="17" fill="#F7F5EF"/>
+          <rect x="72" y="402" width="256" height="34" rx="17" fill="#F7F5EF"/>
+          <line x1="92" y1="80" x2="92" y2="400"/><line x1="308" y1="80" x2="308" y2="400"/>
+          <path d="M120,98 L280,98 C280,170 250,210 208,240 C250,270 280,310 280,382 L120,382 C120,310 150,270 192,240 C150,210 120,170 120,98 Z"/>
+        </g>
+        <path d="M148,180 C172,196 228,196 252,180 C240,205 220,226 208,240 L192,240 C180,226 160,205 148,180 Z" fill="#D6A86E"/>
+        <path d="M132,356 C168,308 232,308 268,356 L270,380 L130,380 Z" fill="#D6A86E"/>
+        <g fill="#F7F5EF" stroke="#1B2946" stroke-width="6"><circle cx="92" cy="240" r="21"/><circle cx="308" cy="240" r="21"/></g>
+      </svg>
+      <div class="name">Minute<span class="cup"> Cup</span></div>
+    </div>
+    <div class="lang-ar">
+      <h1>حذف الحساب والبيانات</h1>
+      <p class="sub">كيف تحذف حسابك في Minute Cup وما الذي يتم حذفه.</p>
+      <span class="updated">آخر تحديث: 8 يونيو 2026</span>
+    </div>
+    <div class="lang-en">
+      <h1>Delete Account & Data</h1>
+      <p class="sub">How to delete your Minute Cup account and what gets removed.</p>
+      <span class="updated">Last updated: June 8, 2026</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="card">
+
+  <!-- ARABIC -->
+  <div class="lang-ar">
+    <p>تطبيق <strong>Minute Cup</strong> يتيح لك حذف حسابك وبياناتك المرتبطة به في أي وقت. لديك طريقتان:</p>
+
+    <h2>الطريقة الأولى: من داخل التطبيق</h2>
+    <ol class="steps">
+      <li>افتح تطبيق Minute Cup وسجّل الدخول برقم جوالك.</li>
+      <li>افتح القائمة الجانبية <span class="pill">القائمة</span> ثم اذهب إلى <span class="pill">الإعدادات / حسابي</span>.</li>
+      <li>اختر <span class="pill">حذف الحساب</span>.</li>
+      <li>أكّد العملية. سيتم حذف حسابك وبياناتك نهائيًا.</li>
+    </ol>
+
+    <h2>الطريقة الثانية: عبر البريد الإلكتروني</h2>
+    <p>إذا لم تتمكن من الوصول للتطبيق، أرسل طلبًا من بريدك المسجّل إلى <a href="mailto:Sami-dossari@hotmail.com">Sami-dossari@hotmail.com</a> بعنوان «<strong>حذف الحساب</strong>» مع ذكر رقم الجوال المرتبط بحسابك. سنتحقق من هويتك وننفّذ الطلب.</p>
+
+    <h2>ما الذي يتم حذفه؟</h2>
+    <ul class="plain">
+      <li>حسابك ورقم جوالك.</li>
+      <li>سجل طلباتك.</li>
+      <li>رصيد محفظتك ونقاط الولاء الخاصة بك.</li>
+      <li>تفضيلاتك وبياناتك المرتبطة بالحساب.</li>
+    </ul>
+    <div class="danger">⚠️ حذف الحساب إجراء <strong>نهائي ولا يمكن التراجع عنه</strong>. سيتم فقدان رصيد المحفظة ونقاط الولاء غير المستخدمة نهائيًا.</div>
+
+    <h2>ما الذي قد نحتفظ به؟</h2>
+    <div class="keep">قد نحتفظ ببعض السجلات (مثل فواتير الطلبات السابقة) للمدة التي يفرضها النظام للأغراض المالية والمحاسبية والقانونية، وذلك في صورة منفصلة عن هويتك قدر الإمكان. تُحذف هذه السجلات تلقائيًا بعد انتهاء المدة النظامية.</div>
+
+    <h2>مدة التنفيذ</h2>
+    <p>تتم معالجة طلب الحذف خلال مدة أقصاها <strong>30 يومًا</strong> من استلامه. الطلبات داخل التطبيق غالبًا ما تُنفّذ فورًا.</p>
+
+    <div class="contact">
+      <h3>تحتاج مساعدة؟</h3>
+      <p style="color:#d9dfec">تواصل معنا في أي وقت:</p>
+      <div class="row">📧 <a href="mailto:Sami-dossari@hotmail.com">Sami-dossari@hotmail.com</a></div>
+      <div class="row">📱 <a href="tel:+966569767610" dir="ltr">+966 56 976 7610</a></div>
+      <div class="row">🌐 <a href="https://minute-cup.interflow.sa" dir="ltr">minute-cup.interflow.sa</a></div>
+    </div>
+  </div>
+
+  <!-- ENGLISH -->
+  <div class="lang-en">
+    <p>The <strong>Minute Cup</strong> app lets you delete your account and all associated data at any time. You have two options:</p>
+
+    <h2>Option 1: From inside the app</h2>
+    <ol class="steps">
+      <li>Open the Minute Cup app and sign in with your mobile number.</li>
+      <li>Open the side menu <span class="pill">Drawer</span>, then go to <span class="pill">Settings / My Account</span>.</li>
+      <li>Tap <span class="pill">Delete Account</span>.</li>
+      <li>Confirm. Your account and data will be permanently deleted.</li>
+    </ol>
+
+    <h2>Option 2: By email</h2>
+    <p>If you can’t access the app, send a request from your registered email to <a href="mailto:Sami-dossari@hotmail.com">Sami-dossari@hotmail.com</a> with the subject “<strong>Delete Account</strong>”, including the mobile number linked to your account. We’ll verify your identity and process it.</p>
+
+    <h2>What gets deleted</h2>
+    <ul class="plain">
+      <li>Your account and mobile number.</li>
+      <li>Your order history.</li>
+      <li>Your wallet balance and loyalty points.</li>
+      <li>Your preferences and account-related data.</li>
+    </ul>
+    <div class="danger">⚠️ Account deletion is <strong>permanent and cannot be undone</strong>. Any unused wallet balance and loyalty points will be lost.</div>
+
+    <h2>What we may retain</h2>
+    <div class="keep">We may keep certain records (such as past order invoices) for the period required by law for financial, accounting, and legal purposes, kept separate from your identity where possible. These records are automatically deleted after the legal retention period ends.</div>
+
+    <h2>Processing time</h2>
+    <p>Deletion requests are processed within a maximum of <strong>30 days</strong> of receipt. In-app requests are usually completed immediately.</p>
+
+    <div class="contact">
+      <h3>Need help?</h3>
+      <p style="color:#d9dfec">Reach out to us anytime:</p>
+      <div class="row">📧 <a href="mailto:Sami-dossari@hotmail.com">Sami-dossari@hotmail.com</a></div>
+      <div class="row">📱 <a href="tel:+966569767610" dir="ltr">+966 56 976 7610</a></div>
+      <div class="row">🌐 <a href="https://minute-cup.interflow.sa" dir="ltr">minute-cup.interflow.sa</a></div>
+    </div>
+  </div>
+
+  </div>
+  <footer>© 2026 Minute Cup — interflow.sa</footer>
+</div>
+
+<script>
+  function setLang(l){
+    document.documentElement.lang=l;
+    document.documentElement.dir = l==='ar' ? 'rtl' : 'ltr';
+    document.getElementById('btn-ar').classList.toggle('active', l==='ar');
+    document.getElementById('btn-en').classList.toggle('active', l==='en');
+    document.title = l==='ar' ? 'حذف الحساب — Minute Cup' : 'Delete Account — Minute Cup';
+  }
+</script>
+</body>
+</html>

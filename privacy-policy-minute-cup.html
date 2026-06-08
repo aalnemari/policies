@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سياسة الخصوصية · Privacy Policy — Minute Cup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1B2946; --navy-2:#26385c; --navy-deep:#121d33;
+    --cream:#F7F5EF; --sand:#D6A86E; --sand-deep:#c3924f;
+    --ink:#2a3144; --muted:#5c6678; --line:#e7e2d6;
+    --card:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:
+      radial-gradient(900px 500px at 80% -10%, rgba(214,168,110,.10), transparent 60%),
+      linear-gradient(180deg,#f3f1e9 0%, #ece8dc 100%);
+    color:var(--ink);
+    font-family:"Plus Jakarta Sans","Cairo",sans-serif;
+    line-height:1.85; min-height:100vh;
+  }
+  html[lang="ar"] body{font-family:"Cairo",sans-serif}
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px 80px}
+
+  /* Header */
+  header{
+    background:
+      radial-gradient(700px 360px at 18% 0%, var(--navy-2), transparent 60%),
+      linear-gradient(160deg,var(--navy) 0%, var(--navy-deep) 100%);
+    color:var(--cream); position:relative; overflow:hidden;
+  }
+  header::after{content:"";position:absolute;inset:0;
+    background:radial-gradient(2px 2px at 20% 40%,rgba(255,255,255,.06),transparent),
+              radial-gradient(2px 2px at 70% 70%,rgba(255,255,255,.05),transparent),
+              radial-gradient(3px 2px at 85% 25%,rgba(255,255,255,.05),transparent);}
+  .head-inner{max-width:880px;margin:0 auto;padding:46px 20px 54px;position:relative;z-index:1}
+  .brand{display:flex;align-items:center;gap:16px}
+  .brand svg{width:54px;height:auto;flex:0 0 auto;filter:drop-shadow(0 6px 14px rgba(0,0,0,.25))}
+  .brand .name{font-family:"Fredoka",sans-serif;font-weight:700;font-size:30px;letter-spacing:.3px}
+  .brand .name .cup{color:var(--sand)}
+  h1{margin-top:26px;font-size:clamp(28px,5vw,40px);font-weight:800;letter-spacing:-.3px}
+  html[lang="ar"] h1{letter-spacing:0}
+  .sub{margin-top:10px;color:#c3cbdd;font-size:16px}
+  .updated{margin-top:18px;display:inline-block;font-size:13px;background:rgba(247,245,239,.12);
+    border:1px solid rgba(247,245,239,.18);padding:6px 14px;border-radius:999px}
+
+  /* Lang toggle */
+  .lang{position:absolute;top:22px;inset-inline-end:20px;z-index:3;display:flex;gap:6px;
+    background:rgba(18,29,51,.5);border:1px solid rgba(247,245,239,.2);border-radius:999px;padding:4px}
+  .lang button{font:inherit;font-size:13px;font-weight:700;border:0;cursor:pointer;color:#c3cbdd;
+    background:transparent;padding:6px 14px;border-radius:999px;font-family:"Plus Jakarta Sans","Cairo",sans-serif}
+  .lang button.active{background:var(--sand);color:var(--navy-deep)}
+
+  /* Card */
+  .card{background:var(--card);margin-top:-28px;border-radius:22px;padding:34px clamp(20px,4vw,46px);
+    box-shadow:0 24px 60px -28px rgba(27,41,70,.4);border:1px solid var(--line);position:relative}
+
+  h2{font-size:21px;font-weight:800;color:var(--navy);margin:34px 0 10px;display:flex;align-items:center;gap:12px}
+  h2 .n{flex:0 0 auto;width:30px;height:30px;border-radius:9px;background:linear-gradient(160deg,var(--sand),var(--sand-deep));
+    color:#fff;font-size:14px;display:grid;place-items:center;font-family:"Fredoka",sans-serif;font-weight:700}
+  h2:first-of-type{margin-top:6px}
+  p{margin:8px 0;color:var(--ink)}
+  ul{margin:10px 0;padding-inline-start:22px}
+  li{margin:7px 0}
+  strong{color:var(--navy)}
+  a{color:var(--sand-deep);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(195,146,79,.4)}
+  a:hover{border-bottom-color:var(--sand-deep)}
+  .note{background:#fbf7ee;border:1px solid #efe6d1;border-inline-start:4px solid var(--sand);
+    border-radius:12px;padding:14px 18px;margin:14px 0}
+  .contact{margin-top:22px;background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:var(--cream);
+    border-radius:16px;padding:24px 26px}
+  .contact h3{font-size:18px;margin-bottom:12px;font-family:"Fredoka","Cairo",sans-serif}
+  .contact a{color:var(--sand);border:0}
+  .contact .row{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0;color:#d9dfec}
+  footer{text-align:center;color:var(--muted);font-size:13px;margin-top:30px}
+  .lang-en{display:none}
+  html[lang="en"]{direction:ltr}
+  html[lang="en"] .lang-ar{display:none}
+  html[lang="en"] .lang-en{display:block}
+  html[lang="en"] li,html[lang="en"] ul{}
+</style>
+</head>
+<body>
+<header>
+  <div class="lang">
+    <button id="btn-ar" class="active" onclick="setLang('ar')">عربي</button>
+    <button id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+  <div class="head-inner">
+    <div class="brand">
+      <svg viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg" aria-label="Minute Cup">
+        <g fill="none" stroke="#F7F5EF" stroke-width="15" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="72" y="44" width="256" height="34" rx="17" fill="#F7F5EF"/>
+          <rect x="72" y="402" width="256" height="34" rx="17" fill="#F7F5EF"/>
+          <line x1="92" y1="80" x2="92" y2="400"/><line x1="308" y1="80" x2="308" y2="400"/>
+          <path d="M120,98 L280,98 C280,170 250,210 208,240 C250,270 280,310 280,382 L120,382 C120,310 150,270 192,240 C150,210 120,170 120,98 Z"/>
+        </g>
+        <path d="M148,180 C172,196 228,196 252,180 C240,205 220,226 208,240 L192,240 C180,226 160,205 148,180 Z" fill="#D6A86E"/>
+        <path d="M132,356 C168,308 232,308 268,356 L270,380 L130,380 Z" fill="#D6A86E"/>
+        <g fill="#F7F5EF" stroke="#1B2946" stroke-width="6"><circle cx="92" cy="240" r="21"/><circle cx="308" cy="240" r="21"/></g>
+      </svg>
+      <div class="name">Minute<span class="cup"> Cup</span></div>
+    </div>
+
+    <div class="lang-ar">
+      <h1>سياسة الخصوصية</h1>
+      <p class="sub">كيف نتعامل مع بياناتك في تطبيق Minute Cup ونحميها.</p>
+      <span class="updated">آخر تحديث: 8 يونيو 2026</span>
+    </div>
+    <div class="lang-en">
+      <h1>Privacy Policy</h1>
+      <p class="sub">How Minute Cup collects, uses, and protects your information.</p>
+      <span class="updated">Last updated: June 8, 2026</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="card">
+
+  <!-- ============ ARABIC ============ -->
+  <div class="lang-ar">
+    <p>يوضّح هذا المستند كيف يقوم تطبيق <strong>Minute Cup</strong> (المنيو الإلكتروني لكافيه Minute Cup) بجمع بياناتك واستخدامها وحمايتها عند استخدامك للتطبيق. نلتزم بحماية خصوصيتك وفقًا لنظام حماية البيانات الشخصية (PDPL) المعمول به في المملكة العربية السعودية.</p>
+
+    <div class="note">باستخدامك تطبيق Minute Cup فإنك توافق على الممارسات الموضّحة في هذه السياسة.</div>
+
+    <h2><span class="n">1</span> التصفّح بدون تسجيل دخول</h2>
+    <p>يمكنك تصفّح القائمة (المنيو) بالكامل، ومشاهدة المنتجات والأسعار، والاطّلاع على أقرب فرع <strong>دون الحاجة إلى إنشاء حساب أو تسجيل الدخول</strong>. لا نطلب أي بيانات شخصية في هذه المرحلة.</p>
+    <p>نطلب منك إدخال رقم جوالك وتأكيده عبر رمز التحقق (OTP) <strong>فقط عند إتمام طلب</strong>. عندها فقط تتم إضافة ميزتي «المحفظة» و«نقاط الولاء» إلى قائمتك.</p>
+
+    <h2><span class="n">2</span> البيانات التي نجمعها</h2>
+    <ul>
+      <li><strong>رقم الجوال:</strong> لإنشاء حسابك والتحقق منه عبر رمز OTP عند إجراء أول طلب.</li>
+      <li><strong>الموقع الجغرافي (GPS):</strong> لتحديد أقرب فرع إليك واقتراحه عند الطلب.</li>
+      <li><strong>بيانات الطلبات:</strong> المنتجات التي طلبتها، الفرع، وتاريخ ووقت الطلب.</li>
+      <li><strong>المحفظة ونقاط الولاء:</strong> رصيدك ونقاطك وسجل العمليات المرتبطة بها.</li>
+      <li><strong>بيانات تقنية:</strong> نوع الجهاز ونظام التشغيل لأغراض تشغيل التطبيق وتحسينه.</li>
+    </ul>
+
+    <h2><span class="n">3</span> كيف نستخدم بياناتك</h2>
+    <ul>
+      <li>تنفيذ طلباتك وإدارتها وتجهيزها في الفرع المناسب.</li>
+      <li>اقتراح أقرب فرع إليك بناءً على موقعك.</li>
+      <li>إدارة رصيد محفظتك ونقاط الولاء الخاصة بك.</li>
+      <li>تأمين حسابك والتحقق من هويتك عبر رمز OTP.</li>
+      <li>تحسين أداء التطبيق وتجربة الاستخدام.</li>
+    </ul>
+
+    <h2><span class="n">4</span> بيانات الموقع</h2>
+    <p>نستخدم موقع جهازك (GPS) لتحديد أقرب فرع إليك فقط. يمكنك رفض إذن الموقع من إعدادات جهازك، وفي هذه الحالة يمكنك اختيار الفرع يدويًا. لا نتتبّع موقعك في الخلفية.</p>
+
+    <h2><span class="n">5</span> رمز التحقق (OTP)</h2>
+    <p>عند الطلب نرسل رمز تحقق عبر رسالة نصية (SMS) إلى رقم جوالك للتأكد من ملكيتك للرقم. قد نستعين بمزوّد خدمة رسائل خارجي موثوق لإرسال هذه الرسائل فقط.</p>
+
+    <h2><span class="n">6</span> مشاركة البيانات</h2>
+    <p>نحن <strong>لا نبيع</strong> بياناتك الشخصية لأي طرف. وقد نشاركها فقط مع:</p>
+    <ul>
+      <li>مزوّدي الخدمة الذين يساعدوننا في تشغيل التطبيق (مثل إرسال رسائل OTP أو الاستضافة)، وفق اتفاقيات تحفظ سرّية بياناتك.</li>
+      <li>الجهات الحكومية المختصة عند وجود التزام نظامي يقتضي ذلك.</li>
+    </ul>
+
+    <h2><span class="n">7</span> الاحتفاظ بالبيانات</h2>
+    <p>نحتفظ ببياناتك طالما حسابك نشط، أو بالقدر اللازم لتقديم الخدمة والالتزام بالمتطلبات النظامية والمالية. عند حذف حسابك تُحذف بياناتك وفق ما هو موضّح في <a href="delete-account.html">صفحة حذف الحساب</a>.</p>
+
+    <h2><span class="n">8</span> حقوقك</h2>
+    <ul>
+      <li>الوصول إلى بياناتك وطلب نسخة منها.</li>
+      <li>تصحيح أي بيانات غير دقيقة.</li>
+      <li>طلب حذف حسابك وبياناتك.</li>
+      <li>سحب موافقتك على أذونات مثل الموقع في أي وقت.</li>
+    </ul>
+
+    <h2><span class="n">9</span> حذف الحساب والبيانات</h2>
+    <p>يمكنك حذف حسابك وبياناتك مباشرةً من داخل التطبيق أو بمراسلتنا. تفاصيل الخطوات وما يُحذف موضّحة في <a href="delete-account.html">صفحة حذف الحساب</a>.</p>
+
+    <h2><span class="n">10</span> خصوصية الأطفال</h2>
+    <p>التطبيق غير موجّه للأطفال دون سن 13 عامًا، ولا نجمع عمدًا بيانات منهم.</p>
+
+    <h2><span class="n">11</span> أمن البيانات</h2>
+    <p>نتّخذ إجراءات تقنية وتنظيمية معقولة لحماية بياناتك من الوصول أو الاستخدام غير المصرّح به. ومع ذلك لا توجد وسيلة نقل عبر الإنترنت آمنة بنسبة 100%.</p>
+
+    <h2><span class="n">12</span> التعديلات على هذه السياسة</h2>
+    <p>قد نحدّث هذه السياسة من وقت لآخر، وسيظهر تاريخ آخر تحديث أعلى الصفحة. ننصحك بمراجعتها دوريًا.</p>
+
+    <div class="contact">
+      <h3>تواصل معنا</h3>
+      <p style="color:#d9dfec">لأي استفسار بخصوص خصوصيتك أو بياناتك:</p>
+      <div class="row">📧 <a href="mailto:Sami-dossari@hotmail.com">Sami-dossari@hotmail.com</a></div>
+      <div class="row">📱 <a href="tel:+966569767610" dir="ltr">+966 56 976 7610</a></div>
+      <div class="row">🌐 <a href="https://minute-cup.interflow.sa" dir="ltr">minute-cup.interflow.sa</a></div>
+    </div>
+  </div>
+
+  <!-- ============ ENGLISH ============ -->
+  <div class="lang-en">
+    <p>This document explains how the <strong>Minute Cup</strong> app (the digital menu for Minute Cup café) collects, uses, and protects your information when you use the app. We are committed to protecting your privacy in accordance with the Personal Data Protection Law (PDPL) of the Kingdom of Saudi Arabia.</p>
+
+    <div class="note">By using the Minute Cup app, you agree to the practices described in this policy.</div>
+
+    <h2><span class="n">1</span> Browsing without signing in</h2>
+    <p>You can browse the full menu, view products and prices, and see the nearest branch <strong>without creating an account or signing in</strong>. We do not request any personal data at this stage.</p>
+    <p>We only ask for your mobile number and verify it via a one-time code (OTP) <strong>when you place an order</strong>. Only then are the “Wallet” and “Loyalty Points” features added to your menu drawer.</p>
+
+    <h2><span class="n">2</span> Data we collect</h2>
+    <ul>
+      <li><strong>Mobile number:</strong> to create and verify your account via OTP when you place your first order.</li>
+      <li><strong>Location (GPS):</strong> to detect and suggest the nearest branch when ordering.</li>
+      <li><strong>Order data:</strong> the products you ordered, the branch, and the order date and time.</li>
+      <li><strong>Wallet & loyalty points:</strong> your balance, points, and related transaction history.</li>
+      <li><strong>Technical data:</strong> device type and operating system, used to run and improve the app.</li>
+    </ul>
+
+    <h2><span class="n">3</span> How we use your data</h2>
+    <ul>
+      <li>To process and manage your orders at the right branch.</li>
+      <li>To suggest the nearest branch based on your location.</li>
+      <li>To manage your wallet balance and loyalty points.</li>
+      <li>To secure your account and verify your identity via OTP.</li>
+      <li>To improve app performance and user experience.</li>
+    </ul>
+
+    <h2><span class="n">4</span> Location data</h2>
+    <p>We use your device location (GPS) solely to determine the nearest branch. You may decline the location permission in your device settings and select a branch manually instead. We do not track your location in the background.</p>
+
+    <h2><span class="n">5</span> One-time code (OTP)</h2>
+    <p>When you order, we send a verification code via SMS to your mobile number to confirm it belongs to you. We may use a trusted third-party SMS provider solely to deliver these messages.</p>
+
+    <h2><span class="n">6</span> Data sharing</h2>
+    <p>We <strong>do not sell</strong> your personal data to anyone. We may share it only with:</p>
+    <ul>
+      <li>Service providers who help us operate the app (such as SMS/OTP delivery or hosting), under agreements that protect your data.</li>
+      <li>Competent government authorities where required by law.</li>
+    </ul>
+
+    <h2><span class="n">7</span> Data retention</h2>
+    <p>We retain your data while your account is active, or as needed to provide the service and meet legal and financial obligations. When you delete your account, your data is removed as described on the <a href="delete-account.html">Delete Account page</a>.</p>
+
+    <h2><span class="n">8</span> Your rights</h2>
+    <ul>
+      <li>Access your data and request a copy.</li>
+      <li>Correct any inaccurate data.</li>
+      <li>Request deletion of your account and data.</li>
+      <li>Withdraw consent for permissions such as location at any time.</li>
+    </ul>
+
+    <h2><span class="n">9</span> Account & data deletion</h2>
+    <p>You can delete your account and data directly within the app or by contacting us. Full steps and what gets deleted are described on the <a href="delete-account.html">Delete Account page</a>.</p>
+
+    <h2><span class="n">10</span> Children’s privacy</h2>
+    <p>The app is not directed to children under 13, and we do not knowingly collect data from them.</p>
+
+    <h2><span class="n">11</span> Data security</h2>
+    <p>We apply reasonable technical and organizational measures to protect your data from unauthorized access or use. However, no method of transmission over the Internet is 100% secure.</p>
+
+    <h2><span class="n">12</span> Changes to this policy</h2>
+    <p>We may update this policy from time to time; the last-updated date appears at the top of the page. Please review it periodically.</p>
+
+    <div class="contact">
+      <h3>Contact us</h3>
+      <p style="color:#d9dfec">For any question about your privacy or data:</p>
+      <div class="row">📧 <a href="mailto:Sami-dossari@hotmail.com">Sami-dossari@hotmail.com</a></div>
+      <div class="row">📱 <a href="tel:+966569767610" dir="ltr">+966 56 976 7610</a></div>
+      <div class="row">🌐 <a href="https://minute-cup.interflow.sa" dir="ltr">minute-cup.interflow.sa</a></div>
+    </div>
+  </div>
+
+  </div>
+  <footer>© 2026 Minute Cup — interflow.sa</footer>
+</div>
+
+<script>
+  function setLang(l){
+    document.documentElement.lang=l;
+    document.documentElement.dir = l==='ar' ? 'rtl' : 'ltr';
+    document.getElementById('btn-ar').classList.toggle('active', l==='ar');
+    document.getElementById('btn-en').classList.toggle('active', l==='en');
+    document.title = l==='ar' ? 'سياسة الخصوصية — Minute Cup' : 'Privacy Policy — Minute Cup';
+  }
+</script>
+</body>
+</html>
